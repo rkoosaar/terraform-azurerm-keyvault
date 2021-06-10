@@ -41,7 +41,6 @@ module "az-keyvault" {
     Project       = "Project Name"
     Role          = "Resource Group"
   }
-}
 
   # if below settings are used, please ensure storage account for logs has been created
   az_kv_ds_enable_logs_to_storage = true
