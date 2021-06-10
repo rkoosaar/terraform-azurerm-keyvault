@@ -85,7 +85,7 @@ resource "azurerm_key_vault_access_policy" "az-kv-self-ap" {
 # Key Vault diagnostic settings (logs)
 
 resource "azurerm_monitor_diagnostic_setting" "az-kv-ds-storage-account" {
-  count = var.az_kv_ds_enable_logs_to_storage ? 1 : 0
+  count              = var.az_kv_ds_enable_logs_to_storage ? 1 : 0
   name               = "logs-to-storage-account"
   target_resource_id = azurerm_key_vault.az-kv.id
   storage_account_id = var.az_kv_ds_storage_account_id
@@ -108,9 +108,9 @@ resource "azurerm_monitor_diagnostic_setting" "az-kv-ds-storage-account" {
 }
 
 resource "azurerm_monitor_diagnostic_setting" "az-kv-ds-log-analytics-ws" {
-  count = var.az_kv_ds_enable_logs_to_log_analytics_ws ? 1 : 0
-  name               = "logs-to-log-analytics-ws"
-  target_resource_id = azurerm_key_vault.az-kv.id
+  count                      = var.az_kv_ds_enable_logs_to_log_analytics_ws ? 1 : 0
+  name                       = "logs-to-log-analytics-ws"
+  target_resource_id         = azurerm_key_vault.az-kv.id
   log_analytics_workspace_id = var.az_kv_ds_log_analytics_ws_id
 
   log {

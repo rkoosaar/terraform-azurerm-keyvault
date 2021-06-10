@@ -87,23 +87,23 @@ variable "az_tags" {
 variable "az_kv_ds_enable_logs_to_storage" {
   type        = bool
   description = "Enables or Disables saving logs to storage"
-  default = false
+  default     = false
 }
 
 variable "az_kv_ds_storage_account_id" {
   type        = string
   description = "The ID of the Storage Account for Diagnostic Settings"
-  default = null
+  default     = null
 }
 
 variable "az_kv_ds_enable_logs_to_log_analytics_ws" {
   type        = bool
   description = "Enables or Disables saving logs to Log Analytics Workspace"
-  default = false
+  default     = false
 }
 
 variable "az_kv_ds_log_analytics_ws_id" {
   type        = string
   description = "The ID of the Log Analytics Workspace for Diagnostic Settings"
-  default = null
+  default     = null
 }
