@@ -49,7 +49,7 @@ resource "azurerm_key_vault" "az-kv" {
   enabled_for_template_deployment = var.az_kv_enabled_for_template_deployment
   enable_rbac_authorization       = var.az_kv_enable_rbac_authorization
 
-  purge_protection_enabled   = var.az_kv_purge_protection_enabled
+  purge_protection_enabled = var.az_kv_purge_protection_enabled
   # This field can only be configured one time and cannot be updated.
   soft_delete_retention_days = var.az_kv_soft_delete_retention_days
 

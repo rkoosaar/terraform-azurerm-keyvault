@@ -77,7 +77,7 @@ variable "az_net_acls" {
 }
 
 variable "az_tags" {
-  type        = map
+  type        = map(any)
   description = "A mapping of tags which should be assigned to all resources"
   default     = {}
 }
