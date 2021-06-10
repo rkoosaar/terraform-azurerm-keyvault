@@ -50,12 +50,12 @@ resource "azurerm_key_vault" "az-kv" {
   enable_rbac_authorization       = var.az_kv_enable_rbac_authorization
 
   purge_protection_enabled   = var.az_kv_purge_protection_enabled
-  soft_delete_enabled        = var.az_kv_soft_delete_enabled
+  # This field can only be configured one time and cannot be updated.
   soft_delete_retention_days = var.az_kv_soft_delete_retention_days
 
   # Network ACLs
   dynamic "network_acls" {
-    for_each = var.az_net_acls != null ? list(var.az_net_acls) : [local.default_net_acls]
+    for_each = var.az_net_acls != null ? tolist([var.az_net_acls]) : [local.default_net_acls]
     content {
       bypass                     = network_acls.value.bypass
       default_action             = network_acls.value.default_action

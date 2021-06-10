@@ -59,12 +59,6 @@ variable "az_kv_purge_protection_enabled" {
   default     = false
 }
 
-variable "az_kv_soft_delete_enabled" {
-  type        = bool
-  description = "Should Soft Delete be enabled for this Key Vault? Defaults to false (I have it true, contrary to azure default setting)"
-  default     = true
-}
-
 variable "az_kv_soft_delete_retention_days" {
   type        = number
   description = "The number of days that items should be retained for once soft-deleted"
