@@ -1,5 +1,5 @@
 module "az-keyvault" {
-  source = "../../../tf_modules/terraform-azurerm-keyvault"
+  source = "../modules/terraform-azurerm-keyvault"
 
   # Resource Group Variables
 
